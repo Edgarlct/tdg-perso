@@ -11,6 +11,7 @@
   "engines": {
     "node": ">=16.0.0"
   },
+  "type": "module",
   "scripts": {
     "test": "nyc --all mocha --exit",
     "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
@@ -26,7 +27,9 @@
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.0",
     "axios": "^1.6.8",
-    "google-auth-library": "^9.10.0"
+    "google-auth-library": "^9.10.0",
+    "mongodb": "^6.6.1",
+    "mongodb-memory-server": "^9.2.0"
   },
   "devDependencies": {
     "c8": "^8.0.0",
