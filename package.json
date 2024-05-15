@@ -17,8 +17,14 @@
     "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
   },
   "nyc": {
-    "reporter": ["lcov", "text-summary"],
-    "include": ["index.js"],
+    "reporter": [
+      "lcov",
+      "text-summary"
+    ],
+    "include": [
+      "index.js",
+      "test/*.js"
+    ],
     "all": true
   },
   "dependencies": {
