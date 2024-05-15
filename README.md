@@ -6,7 +6,23 @@
 
 #### B. Configuration du projet
 1. **Connectez-vous à Google Cloud Console** : Accédez à [Google Cloud Console](https://console.cloud.google.com/) et sélectionnez ou créez un projet.
+<br> </br>
+
+<img src='./documentation/A/doc 1.png' alt='Step 1' width='800px' height='400px'>
+<img src='./documentation/A/doc2.png' alt='Step 2' width='800px' height='400px'>
+<br></br>
+
 2. **Activation des API** : Activez l'API Cloud Functions et l'API Cloud Build si elles ne sont pas déjà actives.
+<br> </br>
+
+<div>
+<img src='./documentation/B/doc3.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/B/doc4.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/B/doc5.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/B/doc6.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/B/doc7.png' alt='Step 2' width='800px' height='400px'>
+</div>
+
 
 #### C. Création de la fonction
 1. **Accédez à Cloud Functions** : Dans le menu de navigation, allez à "Compute > Cloud Functions".
@@ -16,6 +32,14 @@
    - Choisissez "HTTPS" pour le type de déclencheur.
    - Saisissez votre code dans l'éditeur en ligne ou téléchargez votre fichier de code source.
    - Cliquez sur "Deploy" pour déployer la fonction.
+<br> </br>
+
+<div>
+<img src='./documentation/C/doc8.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/C/doc9.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/C/doc10.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/C/doc11.png' alt='Step 2' width='800px' height='400px'>
+</div>
 
 ### 2. Automatisation du déploiement avec GitHub Actions
 
@@ -29,6 +53,18 @@
    - Allez à "Settings > Secrets" et ajoutez les secrets suivants:
      - `gcp_project`: Votre ID de projet Google Cloud.
      - `gcp_credentials`: Base64 de la clé JSON de votre compte de service Google Cloud.
+<br> </br>
+
+<div>
+<img src='./documentation/D/doc13.png' alt='Step 2' width='100%' height='auto'>
+<img src='./documentation/D/doc12.png' alt='Step 2' width='100%' height='auto'>
+<img src='./documentation/D/doc14.png' alt='Step 2' width='100%' height='auto'>
+<img src='./documentation/D/doc15.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/D/doc16.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/D/doc17.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/D/doc18.png' alt='Step 2' width='800px' height='400px'>
+<img src='./documentation/D/doc19.png' alt='Step 2' width='800px' height='400px' style="object-fit: 'cover'">
+</div>
 
 #### C. Création du workflow GitHub Actions
 1. **Créez un fichier de workflow** :
