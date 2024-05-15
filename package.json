@@ -16,9 +16,13 @@
     "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
   },
   "nyc": {
+    "include": ["index.js"],
+    "exclude": ["test/**/*.js"],
     "reporter": ["lcov", "text"],
-    "exclude": ["test/**/*.js"]
-  } ,
+    "all": true,
+    "silent": false,
+    "verbose": true
+  },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.0",
     "axios": "^1.6.8",
