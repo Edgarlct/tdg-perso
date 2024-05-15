@@ -14,12 +14,20 @@
   "scripts": {
     "test": "c8 mocha -p -j 2 test/*.test.js --timeout=6000 --exit"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
+  },
   "dependencies": {
-    "@google-cloud/functions-framework": "^3.1.0"
+    "@google-cloud/functions-framework": "^3.1.0",
+    "axios": "^1.6.8",
+    "google-auth-library": "^9.10.0"
   },
   "devDependencies": {
     "c8": "^8.0.0",
     "gaxios": "^6.0.0",
+    "husky": "^9.0.11",
     "mocha": "^10.0.0",
     "wait-port": "^1.0.4"
   }
