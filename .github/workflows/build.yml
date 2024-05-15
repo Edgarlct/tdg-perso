@@ -18,6 +18,8 @@ jobs:
         run: npm install
       - name: Run Tests with Coverage
         run: npm run test:coverage
+      - name: Display Coverage Data
+        run: cat ./coverage/lcov.info
       - name: Upload Coverage to Codecov
         uses: codecov/codecov-action@v3
         with:

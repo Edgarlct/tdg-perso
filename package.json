@@ -13,12 +13,13 @@
   },
   "scripts": {
     "test": "mocha",
-    "test:coverage": "nyc mocha --exit",
+    "test:coverage": "nyc --reporter=text-lcov mocha --exit",
     "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
   },
   "nyc": {
     "reporter": ["lcov", "text-summary"],
-    "include": ["index.js"]
+    "include": ["index.js"],
+    "all": true
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.0",
