@@ -120,7 +120,8 @@
 
 2. **Généré le BearToken** :
   -Créez le fichier auth.js dans un dossier auth puis insérer ce code afin de pouvoir générer le bear token depuis google cloud
-  ```js
+    ```js
+
     const { GoogleAuth } = require('google-auth-library');
     const axios = require('axios');
 
@@ -147,7 +148,7 @@
         console.error('Error calling the function:', error.response.data);
       }
     }
-    ```
+    
 
     - La response de google avec le bear token et l'authentification.
     ```json
