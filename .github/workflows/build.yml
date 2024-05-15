@@ -9,25 +9,21 @@ jobs:
     name: Codecov
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '18'
-      - name: Install dependencies
+          node-version: '14'
+      - name: Install Dependencies
         run: npm install
-      - name: Run tests and collect coverage
-        run: npm run test
-        env:
-          NODE_ENV: ci
-          DEBUG: 'nyc,*'
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v2
+      - name: Run Tests with Coverage
+        run: npm run test:coverage
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
-          directory: coverage/
           files: ./coverage/lcov.info
+          fail_ci_if_error: true
 
   deploy:
     name: Deploy to Google Cloud Functions
