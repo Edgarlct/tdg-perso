@@ -16,7 +16,7 @@
 
 // [START functions_helloworld_get]
 const functions = require('@google-cloud/functions-framework');
-const hotels = require("./data/hotels.json");
+const MockMongoClient = require("./mockMongoClient");
 
 // Register an HTTP function with the Functions Framework that will be executed
 // when you make an HTTP request to the deployed function's endpoint.
@@ -29,16 +29,17 @@ functions.http('hotelGET', (req, res) => {
   if (!query.name) {
     res.status(400).send({ message: 'Missing name parameter' });
   }
-  const hotels = require('./data/hotels.json');
 
-  for (const hotelsKey in hotels) {
-    if (hotels[hotelsKey] === query.name) {
-      res.status(200).send({ hotel: hotels[hotelsKey] });
-      return;
-    }
-  }
-
-  res.status(404).send({ message: 'Hotel not found' });
+  const client = new MockMongoClient();
+  client.connect().then(() => {
+    client.fetchOneBy("name", query.name).then(hotel => {
+      if (hotel) {
+        res.status(200).send({ hotel: hotel.name });
+      } else {
+        res.status(404).send({ message: 'Hotel not found' });
+      }
+    });
+  })
 });
 
 functions.http('healt', (req, res) => {

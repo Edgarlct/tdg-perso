@@ -1,5 +1,11 @@
-{
-  "hotel1": "aaaaaaaaaaa",
-  "hotel2": "bbbbbbbbb",
-  "hotel3": "ccccccccccc"
-}
+[
+  {
+    "name": "aaaaaaaaaaa"
+  },
+  {
+    "name": "bbbbbbbb"
+  },
+  {
+    "name": "cccccccc"
+  }
+]
