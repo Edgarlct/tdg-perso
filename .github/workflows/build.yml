@@ -19,7 +19,7 @@ jobs:
       - name: list files
         run: ls -la
       - name: Run Tests with Coverage
-        run: npm run test:coverage
+        run: nyc mocha --exit
       - name: Display Coverage Data
         run: cat ./coverage/lcov.info
       - name: Upload Coverage to Codecov
