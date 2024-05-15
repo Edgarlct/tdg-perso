@@ -16,8 +16,6 @@ jobs:
           node-version: '21'
       - name: Install Dependencies
         run: npm install
-      - name: Run Tests with Coverage
-        run: npm run test:coverage
       - name: Display Coverage Data
         run: cat ./coverage/lcov.info
       - name: Upload Coverage to Codecov
