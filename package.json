@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "mocha",
-    "test:coverage": "nyc --reporter=text-lcov mocha --exit",
+    "test:coverage": "nyc --reporter=lcov --reporter=text mocha --exit",
     "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
   },
   "nyc": {
