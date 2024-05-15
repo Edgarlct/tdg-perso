@@ -13,7 +13,7 @@
   },
   "scripts": {
     "test": "c8 mocha -p -j 2 test/*.test.js --timeout=6000 --exit",
-    "prepare": "husky"
+    "prepare": "if [ -z \\\"$CI\\\" ]; then husky install; fi"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.0",
