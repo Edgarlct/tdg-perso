@@ -118,8 +118,41 @@
    - Ajoutez un en-tête `Authorization` avec la valeur `Bearer YOUR_BEAR_TOKEN`.
    - Envoyez la requête pour tester l'authentification.
 
-
 #### E. Code Covering
+1. **Créez un compte Codecov** :
+    - Accédez à [codecov](https://about.codecov.io/) et créez un compte.
+    - Obtenez votre clé API à partir du tableau de bord.
+    <br> </br>
+    <div>
+      <img src='./documentation/codcov/codcov.png' alt='Step 1' width='100%' height='auto'>
+      <img src='./documentation/codcov/codcov.png' alt='Step 1' width='100%' height='auto'>
+      <img src='./documentation/codcov/codcov.png' alt='Step 1' width='100%' height='auto'>
+    </div>
+    <br> </br>
+    - Ajoutez la clé API à vos secrets GitHub. (Même procédure que pour les secrets Google Cloud)
+    
+2. **Ajoutez le workflow Codecov** :
+    ```yaml
+    codecove:
+    name: Codecov
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'
+      - name: Install Dependencies
+        run: npm install
+      - name: Display Coverage Data
+        run: cat ./coverage/lcov.info
+      - name: Upload Coverage to Codecov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/lcov.info
+          fail_ci_if_error: true
+    ```
 
 #### F. Mock
 
