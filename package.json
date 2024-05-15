@@ -12,12 +12,8 @@
     "node": ">=16.0.0"
   },
   "scripts": {
-    "test": "c8 mocha -p -j 2 test/*.test.js --timeout=6000 --exit"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm test"
-    }
+    "test": "c8 mocha -p -j 2 test/*.test.js --timeout=6000 --exit",
+    "prepare": "husky"
   },
   "dependencies": {
     "@google-cloud/functions-framework": "^3.1.0",
