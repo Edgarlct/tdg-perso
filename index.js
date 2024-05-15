@@ -16,10 +16,32 @@
 
 // [START functions_helloworld_get]
 const functions = require('@google-cloud/functions-framework');
+const hotels = require("./data/hotels.json");
 
 // Register an HTTP function with the Functions Framework that will be executed
 // when you make an HTTP request to the deployed function's endpoint.
 functions.http('helloGET', (req, res) => {
   res.send('Hello World!');
+});
+
+functions.http('hotelGET', (req, res) => {
+  const query = req.query;
+  if (!query.name) {
+    res.status(400).send({ message: 'Missing name parameter' });
+  }
+  const hotels = require('./data/hotels.json');
+
+  for (const hotelsKey in hotels) {
+    if (hotels[hotelsKey] === query.name) {
+      res.status(200).send({ hotel: hotels[hotelsKey] });
+      return;
+    }
+  }
+
+  res.status(404).send({ message: 'Hotel not found' });
+});
+
+functions.http('healt', (req, res) => {
+  res.status(204).send();
 });
 // [END functions_helloworld_get]
